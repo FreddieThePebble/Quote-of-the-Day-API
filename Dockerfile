@@ -4,7 +4,10 @@ FROM nginx:alpine
 # Set the working directory to /usr/share/nginx/html
 WORKDIR /usr/share/nginx/html
 
-# Copy the local index.html to the working directory
+# Copy the quotes file to the working directory
+COPY quotes.txt .
+
+# Copy a custom index.html that displays a random quote
 COPY index.html .
 
 # Expose port 80 to the outside world
